@@ -4,9 +4,9 @@ Source code for extension published in webstore including build sripts.
 
 DEVELOPMENT IS DISCONTINUED UNLESS SOMEONE WANTS TO TAKE OVER!
 
-
 ## Files
-- `setup.sh` contains script to build extension, execute to create files that are uploaded into webstore, it will create three folders: 
+
+- `setup.sh` contains script to build extension, execute to create files that are uploaded into webstore, it will create three folders:
   - `/chrome` (contains Chrome extension)
   - `/firefox` (contains Firefox extension)
   - `/firefox_source` (contains un-webpacked files required for upload in Firefox web store)
@@ -24,31 +24,43 @@ DEVELOPMENT IS DISCONTINUED UNLESS SOMEONE WANTS TO TAKE OVER!
   - `popup.[css, html, js]` files to display popup (when clicking on extension icon in browser)
 
 ## Debugging/Local Execution
+
 ### Chrome
+
 1. Open Extension page in Chrome
 2. Switch on "Developer mode"
 3. Click "Load unpacked" and select `manifest.json`
 
 ### Firefox
+
 Follow instructions here https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension
 Note: If Firefox is your main browser, you might like to create a specific profile for testing the extension.
 
 There are no debug files for Firefox, you need to first build the extension files.
+
 1. Run `setup.sh`
 2. Open Add ons and Themes page in Firefox
 3. Load extension from the `/firefox` folder created by `setup.sh`
 
 ### Please note!
+
 Since many more files have to be loaded, sometimes during execution, a file that is required by other files is loaded too late (most occurring error message `getLanguageCode is not defined`. Keep refreshing the page until it works.
 
 Changes in the script files are updated immediately upon page refresh, for changes in the content files, one has to refresh the extension on the extension page in the browser.
 
-
 ## Build Package for Webstore
-Execute `setup.sh`. 
+
+Execute `setup.sh`.
 The script creates one file per feature (it will merge all files from the `/incomingComments` folder and add `inject_[firefox_]incoming_comments`) for Chrome and Firefox and webpacks them using `webpack.config.js` (webpack can't be used to merge the files as there are no modules used in this project).
 
 The script will also create an additional folder `firefox_source` and copies all files required for the Firefox extension unbundled into the folder, including Firefox build scripts `setup_firefox.sh` and `webpack.config_firefox.sh`
 This is required to upload into Firefox web store as Firefox needs the source files and build scripts to validate the files and check if the bundled files uploaded match the source.
 
 To upload in web stores, zip the files in each extension folder (Note: Chrome doesn't care which level the files are in, Firefox is picky and requires the files to be on top level, so don't zip the folder but the folder contents!)
+
+## Contribute
+
+Before you file a merge request, **PLEASE** run prettier on the project.
+To do so: 
+`npm install` in the project dir and run `npm run prettier:format`
+Thank you!

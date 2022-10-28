@@ -7,7 +7,7 @@ const STORAGE_COMIC_LIST_KEY = STORAGE_GENERAL_PREFIX + "comicList";
 const KEY_SETTING_LIKE_DISLIKE_INDICATOR = "likeDislike";
 const KEY_DISCARD_DISABLED_COMMENTS = "discardDisabledComments";
 
-const URL_SUFFIX = "#incoming"
+const URL_SUFFIX = "#incoming";
 
 const NUMBER_OF_ELEMENTS_IN_PAGE = 30;
 const RECRAWL_INTERVAL = 10; // reduce load from wt server
@@ -18,35 +18,39 @@ let SETTINGS = {};
 
 let languageCode = "en";
 
-window.addEventListener("ReceiveContent", function (data) {
-    if ("settings" in data.detail)
-        SETTINGS = data.detail.settings;
+window.addEventListener(
+  "ReceiveContent",
+  function (data) {
+    if ("settings" in data.detail) SETTINGS = data.detail.settings;
 
     languageCode = getLanguageFromURL();
     const commentSelectionTabSNB = addTabRow("incoming_outgoing");
 
-    const li_outgoing = document.createElement('li');
+    const li_outgoing = document.createElement("li");
     li_outgoing.setAttribute("id", "outgoing_comments");
     li_outgoing.setAttribute("class", "on");
     commentSelectionTabSNB.appendChild(li_outgoing);
-	
-	const anchor_OUTGOING = document.createElement('a');
-	anchor_OUTGOING.setAttribute("href", "https://www.webtoons.com/" + languageCode + "/mycomment");
-	anchor_OUTGOING.innerText = "OUTGOING";
+
+    const anchor_OUTGOING = document.createElement("a");
+    anchor_OUTGOING.setAttribute(
+      "href",
+      "https://www.webtoons.com/" + languageCode + "/mycomment"
+    );
+    anchor_OUTGOING.innerText = "OUTGOING";
     li_outgoing.appendChild(anchor_OUTGOING);
-	anchor_OUTGOING.addEventListener("click", switchIntoOutgoingTab);
+    anchor_OUTGOING.addEventListener("click", switchIntoOutgoingTab);
 
-
-    const li_incoming = document.createElement('li');
+    const li_incoming = document.createElement("li");
     li_incoming.setAttribute("id", "incoming_comments");
     commentSelectionTabSNB.appendChild(li_incoming);
-	
-	const anchor_INCOMING = document.createElement('a');
-	anchor_INCOMING.setAttribute("href", URL_SUFFIX);
-	anchor_INCOMING.innerText = "INCOMING";
-    li_incoming.appendChild(anchor_INCOMING);
-	anchor_INCOMING.addEventListener("click", getComments);
 
-    if (window.location.href.includes(URL_SUFFIX))
-        getComments();
-}, false);
+    const anchor_INCOMING = document.createElement("a");
+    anchor_INCOMING.setAttribute("href", URL_SUFFIX);
+    anchor_INCOMING.innerText = "INCOMING";
+    li_incoming.appendChild(anchor_INCOMING);
+    anchor_INCOMING.addEventListener("click", getComments);
+
+    if (window.location.href.includes(URL_SUFFIX)) getComments();
+  },
+  false
+);

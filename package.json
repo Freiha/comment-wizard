@@ -1,0 +1,22 @@
+{
+  "name": "comment-wizard",
+  "version": "1.0.0",
+  "description": "Source code for extension published in webstore including build sripts.",
+  "scripts": {
+    "prettier:check": "prettier --check .",
+    "prettier:format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freiha/comment-wizard.git"
+  },
+  "author": "freiha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freiha/comment-wizard/issues"
+  },
+  "homepage": "https://github.com/freiha/comment-wizard#readme",
+  "dependencies": {
+    "prettier": "^2.7.1"
+  }
+}
