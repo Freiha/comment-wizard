@@ -1,160 +1,160 @@
 body {
-    width: 370px;
-    height: 340px;
-    align-content: center;
-    background-color: #2C2C2C;
+  width: 370px;
+  height: 340px;
+  align-content: center;
+  background-color: #2c2c2c;
 }
 
-p, div, span {
-    font-family: hind_m, simhei, verdana, Helvetica, sans-serif;
+p,
+div,
+span {
+  font-family: hind_m, simhei, verdana, Helvetica, sans-serif;
 }
 
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 17px;
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 /* The slider */
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 13px;
-    width: 13px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-    background-color: #00dc64;
+  background-color: #00dc64;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #00dc64;
+  box-shadow: 0 0 1px #00dc64;
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(13px);
-    -ms-transform: translateX(13px);
-    transform: translateX(13px);
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
 }
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 34px;
+  border-radius: 34px;
 }
 
 .slider.round:before {
-    border-radius: 50%;
+  border-radius: 50%;
 }
-
 
 /* Tooltip text */
 .settingDescriptionToolTip {
-    visibility: hidden;
-    width: 200px;
-    background-color: #363636;
-    font-weight: normal;
-    color: #fff;
-    text-align: center;
-    padding: 5px 5px;
-    border-radius: 6px;
-    left: 0;
-    top: 20px;
-    font-size: 10px;
+  visibility: hidden;
+  width: 200px;
+  background-color: #363636;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+  left: 0;
+  top: 20px;
+  font-size: 10px;
 
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .settingDescription:hover .settingDescriptionToolTip {
-    transition-delay: 0.5s;
-    visibility: visible;
+  transition-delay: 0.5s;
+  visibility: visible;
 }
 
-
 .settingDescription {
-    position: relative;
-    text-align: left;
-    width: 300px;
-    color: white;
-    font-family: hind_m, simhei, verdana, Helvetica, sans-serif;
-    font-size: 15px;
+  position: relative;
+  text-align: left;
+  width: 300px;
+  color: white;
+  font-family: hind_m, simhei, verdana, Helvetica, sans-serif;
+  font-size: 15px;
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
 .settingSwitch {
-    text-align: right;
+  text-align: right;
 }
 
 h1 {
-    text-align: center;
-    display: block;
-    font-size: 20px;
-    line-height: 22px;
-    color: white;
-    padding: 10px;
-    font-family: hind_m, simhei, verdana, Helvetica, sans-serif;
-    background-color: #363636;
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  line-height: 22px;
+  color: white;
+  padding: 10px;
+  font-family: hind_m, simhei, verdana, Helvetica, sans-serif;
+  background-color: #363636;
 }
 
-.followMe, .normalText {
-    overflow: hidden;
-    font-size: 14px;
-    line-height: 21px;
-    /*color:#5f5f5f;*/
-    word-break: break-word;
-    word-wrap: break-word;
-    color: white;
+.followMe,
+.normalText {
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 21px;
+  /*color:#5f5f5f;*/
+  word-break: break-word;
+  word-wrap: break-word;
+  color: white;
 }
 
 .normalText {
-    border-bottom: 3px solid #363636;
-    padding-bottom: 5px;
+  border-bottom: 3px solid #363636;
+  padding-bottom: 5px;
 }
 
 .footnote {
-    overflow: hidden;
-    font-size: 10px;
-    line-height: 21px;
-    /*color:#5f5f5f;*/
-    text-align: right;
-    word-break: break-word;
-    word-wrap: break-word;
-    color: white;
-    padding-right: 10px;
+  overflow: hidden;
+  font-size: 10px;
+  line-height: 21px;
+  /*color:#5f5f5f;*/
+  text-align: right;
+  word-break: break-word;
+  word-wrap: break-word;
+  color: white;
+  padding-right: 10px;
 }
 
-
 a {
-    color: #00dc64;
+  color: #00dc64;
 }
