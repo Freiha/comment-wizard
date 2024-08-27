@@ -7,13 +7,13 @@ const config = {
 const firefoxConfig = Object.assign({}, config, {
   entry: {
     iic: "./temp/incomingComments_firefox.js",
-    idb: "./bin/inject_delete_button.js",
-    irr: "./bin/inject_remove_rating.js",
-    irs: "./bin/inject_round_subs.js",
-    irh: "./bin/inject_reorder_header.js",
-    ild: "./bin/inject_update_loginDropdown.js",
-    content: "./bin/content_firefox.js",
-    popup: "./bin/popup.js",
+    idb: "./src/inject_delete_button.js",
+    irr: "./src/inject_remove_rating.js",
+    irs: "./src/inject_round_subs.js",
+    irh: "./src/inject_reorder_header.js",
+    ild: "./src/inject_update_loginDropdown.js",
+    content: "./src/content_firefox.js",
+    popup: "./src/popup.js",
   },
   mode: "production",
   output: {
@@ -25,13 +25,13 @@ const firefoxConfig = Object.assign({}, config, {
 const chromeConfig = Object.assign({}, config, {
   entry: {
     iic: "./temp/incomingComments.js",
-    idb: "./bin/inject_delete_button.js",
-    irr: "./bin/inject_remove_rating.js",
-    irs: "./bin/inject_round_subs.js",
-    irh: "./bin/inject_reorder_header.js",
-    ild: "./bin/inject_update_loginDropdown.js",
-    content: "./bin/content_chrome.js",
-    popup: "./bin/popup.js",
+    idb: "./src/inject_delete_button.js",
+    irr: "./src/inject_remove_rating.js",
+    irs: "./src/inject_round_subs.js",
+    irh: "./src/inject_reorder_header.js",
+    ild: "./src/inject_update_loginDropdown.js",
+    content: "./src/content_chrome.js",
+    popup: "./src/popup.js",
   },
   mode: "production",
   output: {

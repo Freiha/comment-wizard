@@ -1,8 +1,6 @@
 # Comment Wizard
 
-Source code for extension published in webstore including build sripts.
-
-DEVELOPMENT IS DISCONTINUED UNLESS SOMEONE WANTS TO TAKE OVER!
+Source code for extension published in webstore including build scripts.
 
 ## Files
 
@@ -13,7 +11,7 @@ DEVELOPMENT IS DISCONTINUED UNLESS SOMEONE WANTS TO TAKE OVER!
 - `setup_firefox.sh` contains the script that is required in Firefox web store when webpacked files are uploaded; is copied into `firefox_source` (can only be executed in the `firefox_source` folder created by `setup.sh`!; it will not be executed at this point)
 - `webpack.config.sh` webpacks the files created by `setup.sh` (except for the ones in `/firefox_source`)
 - `webpack.config_firefox.sh` is copied into `/firefox_source` by `setup.sh` to webpack files for Firefox (this script is not executed at this step)
-- `/bin`
+- `/src`
   - `/icons` contains icons displayed in browser
   - `/incomingComments` contains files required for crawling and displaying comments
   - `content.js` used for local execution, first file called by extension, injects script files according to settings set by the user in the extension popup.
@@ -61,6 +59,6 @@ To upload in web stores, zip the files in each extension folder (Note: Chrome do
 ## Contribute
 
 Before you file a merge request, **PLEASE** run prettier on the project.
-To do so: 
+To do so:
 `npm install` in the project dir and run `npm run prettier:format`
 Thank you!

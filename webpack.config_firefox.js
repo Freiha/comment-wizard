@@ -6,15 +6,15 @@ const config = {
 
 const firefoxConfig = Object.assign({}, config, {
   entry: {
-    iic: "./bin/incomingComments.js",
-    idb: "./bin/deleteButton.js",
-    ihf: "./bin/helperFunctions.js",
-    irr: "./bin/removeRating.js",
-    irs: "./bin/roundSubs.js",
-    irh: "./bin/reorderHeader.js",
-    ild: "./bin/loginDropdown.js",
-    content: "./bin/content.js",
-    popup: "./bin/popup.js",
+    iic: "./src/incomingComments.js",
+    idb: "./src/deleteButton.js",
+    ihf: "./src/helperFunctions.js",
+    irr: "./src/removeRating.js",
+    irs: "./src/roundSubs.js",
+    irh: "./src/reorderHeader.js",
+    ild: "./src/loginDropdown.js",
+    content: "./src/content.js",
+    popup: "./src/popup.js",
   },
   mode: "production",
   output: {
