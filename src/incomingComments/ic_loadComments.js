@@ -53,15 +53,15 @@ async function extractCommentsFromEpisode(comic, dictOfComics) {
     for (const entry of Object.entries(comic.episodes)) {
       await sleep(FETCH_DELAY);
       const comment_request_url =
-        "https://www.webtoons.com/p/api/community/v1/page/" +
-        entry[0] +
-        "/posts/search";
+        "https://www.webtoons.com/p/api/community/v2/posts";
 
       const params = {
+        pageId: entry[0],
         categoryId: "",
-        pinRepresentation: "distinct",
+        pinRepresentation: "none",
+        isplayBlindCommentAsService: "false",
         prevSize: 0, // TODO
-        nextSize: 20, // TODO
+        nextSize: 100, // TODO
         withCursor: false, // TODO
         offsetPostId: "", // TODO
       };
@@ -91,7 +91,7 @@ async function extractCommentsFromEpisode(comic, dictOfComics) {
   }
 }
 
-function scanForURLs(webcomic, dictOfComics) {
+function scanForEpisodes(webcomic, dictOfComics) {
   client.get(webcomic.url, function (response) {
     response = stringToHTML(response);
     let latest_episode = response
@@ -199,7 +199,7 @@ async function getComicUrls() {
               tabElement.addEventListener("click", function () {
                 resetProgressBar();
                 switchTabInRow(tabRowId, comicHTMLElementId);
-                scanForURLs(dictOfComics[comicFromList.id], dictOfComics);
+                scanForEpisodes(dictOfComics[comicFromList.id], dictOfComics);
               });
 
               const comicAnchor = document.createElement("a");
@@ -217,7 +217,7 @@ async function getComicUrls() {
         switchTabInRow(tabRowId, "comic_" + selectedComicId);
       }
 
-      scanForURLs(dictOfComics[selectedComicId], dictOfComics);
+      scanForEpisodes(dictOfComics[selectedComicId], dictOfComics);
     }
   );
 }

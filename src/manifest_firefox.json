@@ -1,7 +1,7 @@
 {
   "name": "Comment Wizard",
   "description": "This extension lists comments that were left on episodes of your webcomic you uploaded on WEBTOON to make comment management easier.",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "author": "Freiha",
   "manifest_version": 2,
   "icons": {
