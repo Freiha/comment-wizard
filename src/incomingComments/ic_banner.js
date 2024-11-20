@@ -18,7 +18,7 @@ function addBanner(nextNode) {
     bannerBox.setAttribute("id", "textBox_AnD");
 
     const text =
-      "<div style='padding: 20px 0 10px 10px;'><p>Hi, more changes from wt. This is a regular monthly occurrence by now.</p><p>The comments take longer to load due to wt's new comment management. <b>Please, keep this browser tab open while it is loading!</b></p>If it doesn't show any comments, refresh the page. New comments might take up to 20 minutes to be listed.<br>Check out my comic or buy me a coffee on <u><a href=\"https://ko-fi.com/freiha\" target=\"_blank\">ko-fi.com/freiha</a></u> if you like. :) I'd really appreciate that.  ~Freiha</p></div>";
+      "<div style='padding: 20px 0 10px 10px;'><p>Hi, more changes from wt. This is a regular monthly occurrence by now.</p><p>The comments take longer to load due to wt's new comment management. <b>Please, keep this browser tab open while it is loading!</b></p>If it doesn't show any comments, refresh the page. New comments might take up to 20 minutes to be listed.<br>Check out my comic or buy me a coffee on <u><a href=\"https://ko-fi.com/freiha\" target=\"_blank\">ko-fi.com/freiha</a></u> if you like. ~Freiha</p> </div>";
 
     const bannerTextBox = document.createElement("div");
     bannerTextBox.setAttribute("class", "u_cbox_contents");

@@ -148,7 +148,9 @@ async function getComicUrls() {
       for (let i = 0; i < number_of_comics_in_list; i++) {
         const linkElement = comicList[i].getElementsByClassName("subj")[0];
         const anchor = linkElement.getElementsByTagName("a")[0];
-        const comicUrl = anchor.href.replace("/en/", `/${languageCode}/`);
+        const comicUrl = anchor
+          .getAttribute("data-challenge-url")
+          .replace("/en/", `/${languageCode}/`);
         const comicTitle = anchor.innerText;
         const comicId = comicList[i].id.split("_")[2];
         const comic = new Comic(comicTitle, comicUrl, comicId);
