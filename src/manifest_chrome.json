@@ -1,7 +1,7 @@
 {
   "name": "Comment Wizard",
-  "description": "This extension lists comments that were left on episodes of your webcomic you uploaded on WEBTOON.",
-  "version": "4.0.0",
+  "description": "This extension lists comments that were left on episodes of your webcomic you uploaded on WEBTOON to make comment management easier.",
+  "version": "3.3.0",
   "author": "Freiha",
   "manifest_version": 3,
   "icons": {
@@ -15,9 +15,22 @@
     "default_popup": "popup.html",
     "default_title": "Comment Wizard"
   },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.webtoons.com/*"],
+      "js": ["content.js"]
+    }
+  ],
   "web_accessible_resources": [
     {
-      "resources": ["popup.html", "popup.css"],
+      "resources": [
+        "banner/*.png",
+        "i*.js",
+        "popup.js",
+        "popup.html",
+        "popup.css"
+      ],
       "matches": ["<all_urls>"],
       "extension_ids": []
     }
