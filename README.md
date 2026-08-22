@@ -2,9 +2,6 @@
 
 Source code for extension published in webstore including build scripts.
 
-# IMPORTANT!
-Webtoon offers the functionality native since 2026. Therefore, the extension is not required. I removed all the code in the last published version.
-
 ## Files
 
 - `setup.sh` contains script to build extension, execute to create files that are uploaded into webstore, it will create three folders:
